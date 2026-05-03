@@ -81,12 +81,8 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ══════════════════════════════════════════════
-   GLOBAL LIGHT THEME RESET — force everything white
-   ══════════════════════════════════════════════ */
 html, body { background: #f0f4f9 !important; color: #0f1c2e !important; }
 
-/* Streamlit root containers */
 .stApp, .stApp > div,
 [data-testid="stAppViewContainer"],
 [data-testid="stAppViewBlockContainer"],
@@ -98,13 +94,11 @@ section[data-testid="stSidebar"] ~ div,
     color: #0f1c2e !important;
 }
 
-/* Force font on text containers — exclure canvas et iframe */
 div:not([class*="stDataFrame"]):not([class*="dvn"]):not(canvas),
 section, article, aside, main {
     font-family: 'DM Sans', sans-serif !important;
 }
 
-/* Block container */
 #MainMenu, footer, header { visibility: hidden; }
 .block-container {
     padding: 1.5rem 2.5rem 3rem !important;
@@ -112,7 +106,6 @@ section, article, aside, main {
     background: transparent !important;
 }
 
-/* ── Sidebar ── */
 [data-testid="stSidebar"],
 [data-testid="stSidebar"] > div,
 [data-testid="stSidebar"] section {
@@ -121,7 +114,6 @@ section, article, aside, main {
     border-right: 1px solid #dde3ed !important;
 }
 
-/* ── Tabs ── */
 [data-baseweb="tab-list"] {
     background: #ffffff !important;
     border-radius: 12px !important;
@@ -144,7 +136,6 @@ section, article, aside, main {
 }
 [data-baseweb="tab-highlight"], [data-baseweb="tab-border"] { display: none !important; }
 
-/* ── Buttons ── */
 .stButton > button {
     background: #2563eb !important;
     color: #ffffff !important;
@@ -163,7 +154,6 @@ section, article, aside, main {
     transform: translateY(-1px) !important;
 }
 
-/* ── File uploader ── */
 [data-testid="stFileUploader"] {
     background: #ffffff !important;
     border: 2px dashed #c7d2e0 !important;
@@ -171,7 +161,6 @@ section, article, aside, main {
 }
 [data-testid="stFileUploader"] * { color: #0f1c2e !important; background: transparent !important; }
 
-/* ── Form inputs ── */
 [data-baseweb="select"] > div,
 [data-baseweb="input"] > div,
 .stTextInput > div > div,
@@ -205,7 +194,6 @@ input, select, textarea {
     font-size: 12px !important;
 }
 
-/* ── Metrics ── */
 [data-testid="stMetric"] {
     background: #ffffff !important;
     border: 1px solid #dde3ed !important;
@@ -225,9 +213,6 @@ input, select, textarea {
     font-weight: 700 !important;
 }
 
-/* ══════════════════════════════════════════════
-   EXPANDERS — full light override (all levels)
-   ══════════════════════════════════════════════ */
 [data-testid="stExpander"] {
     background: #ffffff !important;
     border: 1px solid #dde3ed !important;
@@ -246,7 +231,6 @@ input, select, textarea {
     background: #ffffff !important;
     color: #0f1c2e !important;
 }
-/* Ne pas forcer background sur * — ça écraserait le canvas des dataframes */
 [data-testid="stExpander"] summary {
     font-size: 13px !important;
     font-weight: 600 !important;
@@ -257,37 +241,26 @@ input, select, textarea {
 [data-testid="stExpander"] summary:hover { color: #2563eb !important; }
 [data-testid="stExpander"] summary svg { fill: #0f1c2e !important; }
 
-/* ══════════════════════════════════════════════
-   DATAFRAME — only outer styling, NEVER override internals
-   Le canvas Streamlit gère son propre rendu — toute
-   surcharge de background/color rend les données invisibles
-   ══════════════════════════════════════════════ */
 [data-testid="stDataFrame"] {
     border: 1px solid #dde3ed !important;
     border-radius: 10px !important;
     overflow: visible !important;
     box-shadow: 0 1px 4px rgba(15,28,46,0.04) !important;
 }
-/* Le scroller doit être transparent pour laisser le canvas s'afficher */
 .dvn-scroller { background: transparent !important; }
 
-/* ── Progress bar ── */
 [data-testid="stProgress"] > div > div { background: #2563eb !important; }
 [data-testid="stProgress"] > div { background: #e2e8f0 !important; }
 
-/* ── Spinner ── */
 [data-testid="stSpinner"] { color: #2563eb !important; }
 
-/* ── Alerts ── */
 .stAlert { border-radius: 10px !important; font-size: 13px !important; }
 
-/* ── Radio / Checkbox ── */
 [data-baseweb="radio"] { gap: 8px !important; }
 [data-testid="stRadio"] label { font-size: 13px !important; }
 [data-testid="stRadio"] label:has(input:checked) { font-weight: 600 !important; }
 [data-testid="stRadio"] input { accent-color: #2563eb !important; }
 
-/* ── Dividers / Code ── */
 hr { border-color: #dde3ed !important; margin: 1.2rem 0 !important; }
 code {
     background: #f1f5f9 !important;
@@ -299,7 +272,6 @@ code {
     color: #2563eb !important;
 }
 
-/* ── Markdown text ── */
 [data-testid="stMarkdownContainer"] p,
 [data-testid="stMarkdownContainer"] span,
 [data-testid="stMarkdownContainer"] li,
@@ -309,7 +281,6 @@ code {
     color: #0f1c2e !important;
 }
 
-/* ── Select dropdown menu ── */
 [data-baseweb="popover"],
 [data-baseweb="menu"],
 [data-baseweb="menu"] ul,
@@ -554,7 +525,6 @@ with tab0:
     </div>
     """, unsafe_allow_html=True)
 
-    # Volets cards
     st.markdown('<div style="font-size:18px;font-weight:700;color:#0f1c2e;margin-bottom:1rem;">Fonctionnalités principales</div>', unsafe_allow_html=True)
     cv1, cv2 = st.columns(2)
 
@@ -588,7 +558,6 @@ with tab0:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Steps
     st.markdown('<div style="font-size:18px;font-weight:700;color:#0f1c2e;margin-bottom:1rem;">Comment utiliser l\'interface ?</div>', unsafe_allow_html=True)
     steps = [
         ("1","#2563eb","Importer un dataset","Allez dans <strong>Prétraitement</strong> et chargez votre fichier CSV ou Excel."),
@@ -669,7 +638,6 @@ with tab1:
     if uploaded:
         try:
             df = pd.read_csv(uploaded) if uploaded.name.endswith(".csv") else pd.read_excel(uploaded)
-            # Supprimer les colonnes fantômes créées par des virgules finales dans le CSV
             df = df.loc[:, ~df.columns.str.startswith('Unnamed')]
             df = df.dropna(axis=1, how='all')
             st.session_state.df_raw = df.copy()
@@ -774,7 +742,6 @@ with tab1:
         if fill_method == "Supprimer les lignes":
             df = df.dropna()
         else:
-            # Colonnes numériques
             num_c = df.select_dtypes(include=np.number).columns
             if fill_method == "Moyenne":
                 df[num_c] = df[num_c].fillna(df[num_c].mean())
@@ -782,7 +749,6 @@ with tab1:
                 df[num_c] = df[num_c].fillna(df[num_c].median())
             elif fill_method == "Mode":
                 df[num_c] = df[num_c].fillna(df[num_c].mode().iloc[0])
-            # Colonnes catégorielles / objet
             for col in df.select_dtypes(include=["object", "category"]).columns:
                 df[col] = df[col].fillna(df[col].mode()[0] if not df[col].mode().empty else "Inconnu")
         remaining_nan = int(df.isnull().sum().sum())
@@ -812,25 +778,19 @@ with tab1:
         if target_col:
             info_box(f"Variable cible détectée : <code>{target_col}</code> — exclue de la normalisation", "info")
         if not feature_cols:
-            info_box("Aucune feature numérique disponible. Le dataset ne contient pas de colonnes numériques utilisables comme features.", "error")
+            info_box("Aucune feature numérique disponible.", "error")
         else:
             st.markdown(f'<div style="color:#5a6a82;font-size:12px;margin-top:8px;font-weight:500;">Features sélectionnées : {len(feature_cols)}</div>', unsafe_allow_html=True)
     if st.button("⚡ Normaliser les features", key="norm_btn"):
         if not feature_cols:
-            info_box(
-                "Aucune feature numérique disponible pour la normalisation. "
-                "Vérifiez que votre dataset contient au moins une colonne numérique "
-                "qui n'est pas la variable cible.",
-                "error"
-            )
+            info_box("Aucune feature numérique disponible pour la normalisation.", "error")
             st.stop()
         X = df[feature_cols].values.astype(float)
-        # Sécurité : imputer les NaN restants (si nettoyage non appliqué)
         nan_count = int(np.isnan(X).sum())
         if nan_count > 0:
             imputer = SimpleImputer(strategy="mean")
             X = imputer.fit_transform(X)
-            info_box(f"<strong>{nan_count} valeur(s) manquante(s)</strong> détectée(s) — imputées automatiquement par la <strong>moyenne</strong>.", "warning")
+            info_box(f"<strong>{nan_count} valeur(s) manquante(s)</strong> imputées automatiquement.", "warning")
         scaler = MinMaxScaler() if "Min-Max" in scaler_choice else StandardScaler()
         X_scaled = scaler.fit_transform(X)
         st.session_state.X_scaled    = X_scaled
@@ -876,9 +836,7 @@ with tab1:
                 bp['boxes'][0].set_edgecolor(color)
                 bp['boxes'][0].set_linewidth(1.8)
                 median_val = float(np.median(series))
-                ax.text(1.32, median_val, f"{median_val:.2g}",
-                        va='center', ha='left', fontsize=7.5,
-                        color=ACCENT, fontweight='600')
+                ax.text(1.32, median_val, f"{median_val:.2g}", va='center', ha='left', fontsize=7.5, color=ACCENT, fontweight='600')
                 ax.set_title(col, fontsize=9, fontweight='700', color=TEXT, pad=6)
                 ax.set_xticks([])
                 ax.tick_params(axis='y', labelsize=7.5, colors=TEXT2)
@@ -889,8 +847,7 @@ with tab1:
                 for sp in ['left']: ax.spines[sp].set_color(BORDER)
             for j in range(len(cols_bp), len(axf)):
                 axf[j].set_visible(False)
-            fig.suptitle("Boxplot — Distribution des features", fontsize=13,
-                         fontweight='700', color=TEXT, y=1.01)
+            fig.suptitle("Boxplot — Distribution des features", fontsize=13, fontweight='700', color=TEXT, y=1.01)
             fig.tight_layout(h_pad=2.5, w_pad=2.0)
             return fig
 
@@ -1064,24 +1021,14 @@ with tab2:
                 elif noise_pct > 30: info_box(f"Ratio de bruit élevé ({noise_pct:.1f}%). Envisagez d'<strong>augmenter ε</strong>.", "warning")
 
             section_title("📊", "Métriques d'évaluation", "Silhouette")
-            st.markdown(f"""
-            <div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px;">
-              <div style="background:#ffffff;border:1px solid #dde3ed;border-radius:10px;padding:12px 14px;border-top:3px solid {ACCENT};box-shadow:0 1px 4px rgba(15,28,46,.05);">
-                <div style="font-size:11px;color:{ACCENT};font-weight:700;text-transform:uppercase;letter-spacing:.07em;">Score Silhouette</div>
-                <div style="font-size:11px;color:#5a6a82;margin-top:4px;">Cohésion vs séparation. Plage [−1, 1]. <strong style="color:#0f1c2e;">↑ proche de 1 = meilleur</strong></div>
-              </div>
-            </div>
-            </div>
-            """, unsafe_allow_html=True)
-
             rows = []
             for name, lbl in labels_all.items():
                 mask = lbl != -1; valid = len(set(lbl[mask])) >= 2
                 rows.append({
-                    "Algorithme":          name,
-                    "Silhouette ↑":        f"{silhouette_score(X_scaled[mask], lbl[mask]):.4f}"        if valid else "N/A",
-                    "Clusters":            str(len(set(lbl[mask]))),
-                    "Points de bruit":     str(list(lbl).count(-1)) if -1 in lbl else "—",
+                    "Algorithme":      name,
+                    "Silhouette ↑":    f"{silhouette_score(X_scaled[mask], lbl[mask]):.4f}" if valid else "N/A",
+                    "Clusters":        str(len(set(lbl[mask]))),
+                    "Points de bruit": str(list(lbl).count(-1)) if -1 in lbl else "—",
                 })
             st.dataframe(pd.DataFrame(rows).set_index("Algorithme"), use_container_width=True)
 
@@ -1108,14 +1055,9 @@ with tab2:
             n_alg = len(labels_all)
             algo_col_map = {"K-Means": ACCENT, "K-Medoids": PURPLE, "AGNES": GREEN, "DIANA": AMBER, "DBSCAN": CYAN}
 
-            # Layout : 2 colonnes max pour que les subplots restent compacts
             ncols_pca = min(2, n_alg)
             nrows_pca = (n_alg + ncols_pca - 1) // ncols_pca
-            fig_pca, axes_pca = plt.subplots(
-                nrows_pca, ncols_pca,
-                figsize=(ncols_pca * 4.6, nrows_pca * 4.2),
-                squeeze=False
-            )
+            fig_pca, axes_pca = plt.subplots(nrows_pca, ncols_pca, figsize=(ncols_pca * 4.6, nrows_pca * 4.2), squeeze=False)
             axf_pca = [axes_pca[r][c] for r in range(nrows_pca) for c in range(ncols_pca)]
 
             for idx, (name, lbl) in enumerate(labels_all.items()):
@@ -1126,19 +1068,12 @@ with tab2:
                     is_noise = cid == -1
                     color = "#aab4c0" if is_noise else CLUSTER_PALETTE[cid % len(CLUSTER_PALETTE)]
                     label = "Bruit" if is_noise else f"C{cid} ({mask.sum()})"
-                    ax.scatter(X_2d[mask, 0], X_2d[mask, 1],
-                               c=color, s=18, alpha=0.75, linewidths=0,
-                               label=label, zorder=2)
-
-                # Centroïdes (hors bruit)
+                    ax.scatter(X_2d[mask, 0], X_2d[mask, 1], c=color, s=18, alpha=0.75, linewidths=0, label=label, zorder=2)
                 for cid in unique_ids:
                     if cid == -1: continue
                     mask = lbl == cid
                     cx, cy = X_2d[mask, 0].mean(), X_2d[mask, 1].mean()
-                    ax.scatter(cx, cy, marker='X', s=90,
-                               c=CLUSTER_PALETTE[cid % len(CLUSTER_PALETTE)],
-                               edgecolors='white', linewidths=1.2, zorder=4)
-
+                    ax.scatter(cx, cy, marker='X', s=90, c=CLUSTER_PALETTE[cid % len(CLUSTER_PALETTE)], edgecolors='white', linewidths=1.2, zorder=4)
                 accent_c = algo_col_map.get(name, ACCENT)
                 ax.set_title(name, fontsize=10, fontweight='700', pad=8, color=accent_c)
                 ax.set_xlabel(f"PC1  ({var[0]:.1f}% var.)", fontsize=7.5, color=TEXT2)
@@ -1147,27 +1082,18 @@ with tab2:
                 ax.grid(alpha=0.25, linestyle='--', zorder=0)
                 for spine in ax.spines.values():
                     spine.set_color(BORDER); spine.set_linewidth(0.8)
-                leg = ax.legend(fontsize=7, markerscale=1.4, framealpha=0.9,
-                                edgecolor=BORDER, loc='best')
+                leg = ax.legend(fontsize=7, markerscale=1.4, framealpha=0.9, edgecolor=BORDER, loc='best')
                 leg.get_frame().set_linewidth(0.6)
 
-            # Masquer les axes vides
             for j in range(n_alg, len(axf_pca)):
                 axf_pca[j].set_visible(False)
 
-            fig_pca.suptitle("Projections des clusters — PCA 2D",
-                             fontsize=12, fontweight='700', color=TEXT, y=1.01)
+            fig_pca.suptitle("Projections des clusters — PCA 2D", fontsize=12, fontweight='700', color=TEXT, y=1.01)
             fig_pca.tight_layout(h_pad=2.8, w_pad=2.5)
             st.pyplot(fig_pca); plt.close(fig_pca)
 
             if "AGNES" in algos:
                 section_title("🌿", "AGNES — Dendrogramme", f"Liaison : {agnes_linkage}")
-                st.markdown(f"""<div style="background:#f0fdf4;border:1px solid rgba(22,163,74,.25);border-radius:10px;
-                            padding:12px 16px;margin-bottom:12px;font-size:12px;color:#5a6a82;line-height:1.6;">
-                  Un <strong style="color:#0f1c2e;">dendrogramme</strong> montre comment les clusters sont fusionnés à chaque étape.
-                  L'<strong style="color:#0f1c2e;">axe vertical</strong> représente la distance de fusion.
-                  Les <strong style="color:{GREEN};">branches colorées</strong> en dessous du seuil = clusters finaux.
-                </div>""", unsafe_allow_html=True)
                 n_samp = min(250, X_scaled.shape[0])
                 link_mat = linkage(X_scaled[:n_samp], method=agnes_linkage)
                 threshold = 0.7 * max(link_mat[:, 2])
@@ -1180,27 +1106,11 @@ with tab2:
                 ax_d.legend(fontsize=9); ax_d.grid(axis='y', alpha=0.4); fig_d.tight_layout()
                 st.pyplot(fig_d); plt.close(fig_d)
 
-            if "DIANA" in algos:
-                section_title("✂️", "DIANA — Analyse Divisive", f"Liaison : {diana_linkage}")
-                st.markdown(f"""<div style="background:#fffbeb;border:1px solid rgba(217,119,6,.25);border-radius:10px;
-                            padding:12px 16px;font-size:12px;color:#5a6a82;line-height:1.6;">
-                  <strong style="color:#0f1c2e;">DIANA</strong> est le pendant <em>descendant</em> d'AGNES. Il commence avec
-                  les {X_scaled.shape[0]} points dans un seul cluster et divise récursivement le plus hétérogène,
-                  via la liaison <strong style="color:{AMBER};">{diana_linkage}</strong>. Produit exactement k = {k} clusters.
-                </div>""", unsafe_allow_html=True)
-
             if "DBSCAN" in algos:
                 section_title("🔵", "DBSCAN — Analyse par densité", f"ε={eps_val} · MinPts={min_samp}")
                 lbl_db = labels_all["DBSCAN"]
                 nc_db = len(set(lbl_db)) - (1 if -1 in lbl_db else 0)
                 nn_db = list(lbl_db).count(-1)
-                st.markdown(f"""<div style="background:#ecfeff;border:1px solid rgba(8,145,178,.25);border-radius:10px;
-                            padding:12px 16px;margin-bottom:12px;font-size:12px;color:#5a6a82;line-height:1.6;">
-                  <strong style="color:#0f1c2e;">DBSCAN</strong> regroupe les points densément regroupés tout en marquant les épars comme
-                  <strong style="color:{RED};">bruit</strong>. Ne nécessite pas k à l'avance.<br>
-                  <strong>Résultat :</strong> <strong style="color:#0f1c2e;">{nc_db} cluster(s)</strong> et
-                  <strong style="color:{RED};">{nn_db} bruit(s)</strong> ({nn_db/len(lbl_db)*100:.1f}%) avec ε={eps_val}, MinPts={min_samp}.
-                </div>""", unsafe_allow_html=True)
 
                 if nc_db > 0:
                     cluster_sizes = [int(np.sum(lbl_db==c)) for c in range(nc_db)]
