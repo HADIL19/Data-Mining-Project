@@ -8,7 +8,8 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
-
+## 🌐 Live App
+https://data-mining-project-cwjq4x39pan6yahegmyaxd.streamlit.app/
 ## 📋 Overview
 
 This app was developed as a mini-project for the **FD1 (Fouille de Données 1)** module at the **Faculty of Computer Science, USTHB** (M1 Bioinformatics, 2025–2026).
